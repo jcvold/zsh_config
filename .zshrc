@@ -88,17 +88,28 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+setopt auto_cd
+cdpath=($HOME/CareRev)
+
+### export AWS_PROFILE= carerev-prod-org-terraform
+### export AWS_REGION= US-EAST-1
+export PROXY="http://127.0.0.1:8080"
+
+hello () {
+	echo "Hello world";
+}
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nano'
+else
+  export EDITOR='nano'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
